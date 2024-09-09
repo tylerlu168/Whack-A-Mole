@@ -1,0 +1,57 @@
+:root{
+    --blue: #004887;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-color: var(--blue);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hole-container{
+    width: 600px;
+    height: 400px;
+
+    display: grid;
+    grid-template-areas: 
+        "hole1 hole2 hole3"
+        "hole4 hole5 hole6";
+}
+
+.hole {
+    overflow: hidden;
+    position: relative;
+}
+
+.hole::after {
+    display: block;
+    background: url('img/dirt.svg') bottom center no-repeat;
+    background-clip: contain;
+    width: 100%;
+    height: 70px;
+    bottom: -15px;
+    content: '';
+    z-index: 1;
+}
+
+.mole {
+    background: url('img/dirt.svg') bottom center no-repeat;
+    background-size: 60%;
+    position: 60%;
+    top: 80%;
+    width: 100%;
+    height: 100%;
+
+}
+
+.up{
+    top: 0;
+}
